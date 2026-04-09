@@ -71,6 +71,63 @@ td.ph{ text-align:center; padding:9px 10px; }
 footer{ text-align:center; padding:16px; font-size:.72rem;
   color:#999; background:#e8e8e8; }
 footer a{ color:#b71c1c; }
+
+@media (max-width: 640px) {
+  header { padding:14px 16px; gap:10px; flex-wrap:wrap; }
+  header .icon { font-size:2rem; }
+  header h1 { font-size:1.05rem; }
+  header p  { font-size:.72rem; }
+
+  .wrap { padding:14px 10px 40px; }
+
+  /* dissolve table into flex column of cards */
+  thead { display:none; }
+  table { display:block; background:transparent; box-shadow:none; border-radius:0; }
+  tbody { display:flex; flex-direction:column; gap:10px; }
+
+  tbody tr {
+    display:grid;
+    grid-template-columns: 74px 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap:12px; row-gap:6px;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #e8e8e8 !important;
+    background:#fff;
+    box-shadow:0 1px 8px rgba(0,0,0,.07);
+  }
+  tbody tr.chair { background:#fff8ec; }
+  tbody tr.vice  { background:#f3f8ff; }
+
+  /* reset td defaults */
+  tbody tr > td { padding:0; border:none; vertical-align:top; font-size:.83rem; }
+
+  /* row 1: badge — full width */
+  tbody tr > td:nth-child(1) { grid-column:1 / -1; grid-row:1; }
+
+  /* row 2 left: photo — spans rows 2–3 */
+  tbody tr > td:nth-child(3) {
+    grid-column:1; grid-row:2 / 4;
+    text-align:center; align-self:start;
+  }
+
+  /* row 2 right: name */
+  tbody tr > td:nth-child(2) {
+    grid-column:2; grid-row:2;
+    align-self:center;
+  }
+
+  /* row 3 right: roles */
+  tbody tr > td:nth-child(4) {
+    grid-column:2; grid-row:3;
+    align-self:start;
+  }
+
+  .pbox  { width:68px; height:78px; }
+  .noimg { width:68px; height:78px; }
+  .roles { font-size:.73rem; line-height:1.65; }
+  .nm    { font-size:.88rem; }
+}
 </style>
 </head>
 <body>
